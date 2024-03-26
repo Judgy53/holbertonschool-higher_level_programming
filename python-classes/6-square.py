@@ -20,11 +20,10 @@ class Square():
             print("")
             return
 
-        line = " " * self.position[0] + "#" * self.size
-        
         for _ in range(self.position[1]):
             print("")
 
+        line = " " * self.position[0] + "#" * self.size
         for _ in range(self.size):
             print("{}".format(line))
 
