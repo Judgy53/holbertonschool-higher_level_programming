@@ -31,14 +31,21 @@ Adding None with default value
 	Traceback (most recent call last):
         	...
 	TypeError: a must be an integer
-
-Adding a negative float with default value
-	>>> add_integer(-3.6)
-	95
-
-Adding 2 strings
-	>>> add_integer("abc", "def")
+	
+Passing no arguments
+	>>> add_integer()
 	Traceback (most recent call last):
         	...
-	TypeError: a must be an integer
-	
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+    
+Passing NaN
+	>>> add_integer(float('NaN'))
+	Traceback (most recent call last):
+        	...
+	ValueError: cannot convert float NaN to integer
+    
+Passing inf
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+        	...
+	OverflowError: cannot convert float infinity to integer
