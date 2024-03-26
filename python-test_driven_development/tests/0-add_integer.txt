@@ -1,0 +1,44 @@
+Test for module 'add_integer'
+=============================
+
+Import the module
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Adding 2 positive integers
+	>>> add_integer(1, 2)
+	3
+
+Adding 1 positive integer and 1 negative integer
+	>>> add_integer(100, -2)
+	98
+
+Adding 1 positive integer with default value
+	>>> add_integer(2)
+	100
+
+Adding 1 float with 1 integer
+	>>> add_integer(100.3, -2)
+	98
+
+Adding 1 integer with a string
+	>>> add_integer(4, "test")
+	Traceback (most recent call last):
+        	...
+	TypeError: b must be an integer
+
+Adding None with default value
+	>>> add_integer(None)
+	Traceback (most recent call last):
+        	...
+	TypeError: a must be an integer
+
+Adding a negative float with default value
+	>>> add_integer(-3.6)
+	95
+
+Adding 2 strings
+	>>> add_integer("abc", "def")
+	Traceback (most recent call last):
+        	...
+	TypeError: a must be an integer
+	
