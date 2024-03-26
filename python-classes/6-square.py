@@ -20,10 +20,12 @@ class Square():
             print("")
             return
 
-        line = "#" * self.size
-        #if self.position[1] == 0:
-        line = " " * self.position[0] + line
-        for i in range(self.size):
+        line = " " * self.position[0] + "#" * self.size
+        
+        for _ in range(self.position[1]):
+            print("")
+
+        for _ in range(self.size):
             print("{}".format(line))
 
     @property
