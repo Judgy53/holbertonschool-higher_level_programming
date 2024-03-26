@@ -21,8 +21,8 @@ class Square():
             return
 
         line = "#" * self.size
-        if self.position[1] == 0:
-            line = " " * self.position[0] + line
+        #if self.position[1] == 0:
+        line = " " * self.position[0] + line
         for i in range(self.size):
             print("{}".format(line))
 
