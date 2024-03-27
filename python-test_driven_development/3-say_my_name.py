@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module contains one function, say_my_name(first_name, last_name=""). Example:
+This module contains one function, say_my_name(first_name, last_name="").
+Example:
     >>> say_my_name("John", "Smith")
     "My name is John Smith"
 """
