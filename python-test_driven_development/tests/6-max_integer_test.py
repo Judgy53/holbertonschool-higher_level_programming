@@ -24,7 +24,7 @@ class TestMaxInteger(unittest.TestCase):
         """Test for max element in the middle of the list
         Expected Result: 50"""
 
-        self.assertEqual(max_integer([10, 20, 50, 40, 30), 50)
+        self.assertEqual(max_integer([10, 20, 50, 40, 30]), 50)
 
     def test_single_element(self):
         """Test for passing a list with 1 element
