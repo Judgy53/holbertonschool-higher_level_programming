@@ -1,0 +1,78 @@
+Tests for module 'matrix_divided'
+=================================
+
+Import the module
+        >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Passing a valid matrix and a valid divider
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Passing an empty matrix
+	>>> matrix_divided([], 1)
+	[]
+
+Passing a matrix of empty rows
+	>>> matrix_divided([[], []], 1)
+	[[], []]
+
+Passing no arguments
+	>>> matrix_divided()
+	Traceback (most recent call last):
+                ...
+        TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Passing a string instead of a matrix
+	>>> matrix_divided("9.9", 3)
+	Traceback (most recent call last):
+                ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Passing a matrix of strings instead of integers or floats
+	>>> matrix_divided([[1.0, "2.0"], [5, "bla"]], 2)
+	Traceback (most recent call last):
+                ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Passing a matrix with row of different sizes
+	>>> matrix_divided([[1], [2, 3], [4, 5, 6]], 9)
+	Traceback (most recent call last):
+                ...
+	TypeError: Each row of the matrix must have the same size
+
+Passing a non number div
+	>>> matrix_divided([[1, 2], [3, 4]], None)
+	Traceback (most recent call last):
+                ...
+        TypeError: div must be a number
+
+Passing 0 as div
+	>>> matrix_divided([[1, 2], [3, 4]], 0)
+	Traceback (most recent call last):
+                ...
+	ZeroDivisionError: division by zero
+
+Returns a new matrix
+	>>> matrix = [[10, 20], [30, 40]]
+	>>> matrix_divided(matrix, 10)
+	[[1.0, 2.0], [3.0, 4.0]]
+	>>> print(matrix)
+	[[10, 20], [30, 40]]
+
+Passing inf in the matrix
+	>>> matrix_divided([[2, float('inf')], [3, 4]], 2)
+	[[1.0, inf], [1.5, 2.0]]
+
+Passing inf as divider
+	>>> matrix_divided([[1, 2], [3, 4]], float('inf'))
+	[[0.0, 0.0], [0.0, 0.0]]
+
+Passing NaN in the matrix
+	>>> matrix_divided([[2, float('NaN')], [3, 4]], 2)
+	[[1.0, nan], [1.5, 2.0]]
+
+Passing NaN as divider
+	>>> matrix_divided([[1, 2], [3, 4]], float('NaN'))
+	[[nan, nan], [nan, nan]]
+
+
