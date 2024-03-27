@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
-"""
+"""Unittest for max_integer([..])"""
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
+
 
 class TestMaxInteger(unittest.TestCase):
     """Defines all tests for max_integer([...])"""
@@ -18,6 +19,12 @@ class TestMaxInteger(unittest.TestCase):
         Expected Result: 9"""
 
         self.assertEqual(max_integer([8, 1, 6, 9]), 9)
+
+    def test_middle_element(self):
+        """Test for max element in the middle of the list
+        Expected Result: 50"""
+
+        self.assertEqual(max_integer([10, 20, 50, 40, 30), 50)
 
     def test_single_element(self):
         """Test for passing a list with 1 element
