@@ -1,0 +1,34 @@
+Tests for module 'text_indentation'
+==============================
+
+
+Import the module
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Pass a string with split chars
+	>>> text_indentation("Sentence1. Sentence2: Sentence3?")
+	Sentence1.
+	<BLANKLINE>
+	Sentence2:
+	<BLANKLINE>
+	Sentence3?
+
+Pass a string with no split chars
+	>>> text_indentation("Ran-dom;pun,ctu!ation/")
+	Ran-dom;pun,ctu!ation/
+
+Pass an empty string
+	>>> text_indentation("")
+	
+
+Pass an integer
+	>>> text_indentation(42)
+	Traceback (most recent call last):
+                ...
+        TypeError: text must be a string
+
+Passing no arguments
+	>>> text_indentation()
+	Traceback (most recent call last):
+                ...
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
