@@ -1,8 +1,6 @@
 # python-if_else_loops_functions
 Project in python to learn basic syntax, functions and how to control the flow of the code.
 
-All projects were done during the bridge to full stack specialization, at Holberton School.
-
 ## 0-positive_or_negative.py - Positive anything is better than negative nothing
 This program will assign a random signed number to the variable `number` each time it is executed.
 
